@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { TarjetaService } from '../tarjeta.service';
 import { Tarjeta } from '../tarjeta.model';
-
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms'; // Importa FormsModule
 
 @Component({
   selector: 'app-tarjetas',
+  standalone: true, // Añade standalone si estás usando Angular 17+
+  imports: [CommonModule, FormsModule], // Añade CommonModule y FormsModule aquí
   templateUrl: './tarjetas.component.html',
 })
 export class TarjetasComponent implements OnInit {

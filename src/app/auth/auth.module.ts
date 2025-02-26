@@ -10,4 +10,3 @@ import { LoginComponent } from './login/login.component';
   imports: [CommonModule, FormsModule, HttpClientModule],
 })
 export class AuthModule {}
-
