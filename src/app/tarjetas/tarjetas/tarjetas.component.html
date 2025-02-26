@@ -1,5 +1,6 @@
 <h2>Gestión de Tarjetas Regalo</h2>
 
+<!-- Formulario para agregar una nueva tarjeta -->
 <form (submit)="agregarTarjeta()">
   <input type="text" placeholder="Código" [(ngModel)]="nuevaTarjeta.codigo" name="codigo" required />
   <input type="number" placeholder="Monto" [(ngModel)]="nuevaTarjeta.monto" name="monto" required />
@@ -8,9 +9,10 @@
   <button type="submit">Agregar Tarjeta</button>
 </form>
 
+<!-- Listado de tarjetas -->
 <ul>
   <li *ngFor="let tarjeta of tarjetas">
-    {{ tarjeta.codigo }} - ${{ tarjeta.monto }} 
+    {{ tarjeta.codigo }} - ${{ tarjeta.monto }}
     <button (click)="eliminarTarjeta(tarjeta.id!)">Eliminar</button>
   </li>
 </ul>
