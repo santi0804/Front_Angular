@@ -1,0 +1,7 @@
+<h2>Registro de Usuario</h2>
+<form (submit)="registrar()">
+  <input type="text" placeholder="Nombre" [(ngModel)]="usuario.nombre" name="nombre" required />
+  <input type="email" placeholder="Email" [(ngModel)]="usuario.email" name="email" required />
+  <input type="password" placeholder="Contraseña" [(ngModel)]="usuario.password" name="password" required />
+  <button type="submit">Registrar</button>
+</form>

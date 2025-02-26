@@ -1,0 +1,16 @@
+<h2>Gestión de Tarjetas Regalo</h2>
+
+<form (submit)="agregarTarjeta()">
+  <input type="text" placeholder="Código" [(ngModel)]="nuevaTarjeta.codigo" name="codigo" required />
+  <input type="number" placeholder="Monto" [(ngModel)]="nuevaTarjeta.monto" name="monto" required />
+  <input type="date" [(ngModel)]="nuevaTarjeta.fechaCreacion" name="fechaCreacion" required />
+  <input type="date" [(ngModel)]="nuevaTarjeta.fechaExpiracion" name="fechaExpiracion" required />
+  <button type="submit">Agregar Tarjeta</button>
+</form>
+
+<ul>
+  <li *ngFor="let tarjeta of tarjetas">
+    {{ tarjeta.codigo }} - ${{ tarjeta.monto }} 
+    <button (click)="eliminarTarjeta(tarjeta.id!)">Eliminar</button>
+  </li>
+</ul>
