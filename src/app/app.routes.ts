@@ -5,22 +5,20 @@ import { RegisterComponent } from './auth/register/register.component';
 import { ListarComponent } from './tarjetas/listar/listar.component';
 import { CrearComponent } from './tarjetas/crear/crear.component';
 import { AuthGuard } from './auth/auth.guard';
-import { TarjetasComponent } from './tarjetas/tarjetas/tarjetas.component';
-
 
 // Configuración de rutas
 export const routes: Routes = [
-    { path: 'login', component: LoginComponent },
-    { path: 'register', component: RegisterComponent },
-    { path: 'tarjetas', component: ListarComponent, canActivate: [AuthGuard] }, // Ruta protegida
-    { path: 'tarjetas/crear', component: CrearComponent, canActivate: [AuthGuard] }, // Ruta protegida
-    { path: '', redirectTo: '/login', pathMatch: 'full' }, // Ruta por defecto
-    { path: '**', redirectTo: '/login' }, // Ruta comodín (para rutas no encontradas)
-  ];
-  
-  // Módulo de rutas
-  @NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule],
-  })
-  export class AppRoutingModule {}
+  { path: 'login', component: LoginComponent }, // Ruta para el login
+  { path: 'register', component: RegisterComponent }, // Ruta para el registro
+  { path: 'tarjetas', component: ListarComponent, canActivate: [AuthGuard] }, // Ruta protegida para listar tarjetas
+  { path: 'tarjetas/crear', component: CrearComponent, canActivate: [AuthGuard] }, // Ruta protegida para crear tarjetas
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '**', redirectTo: '/login' }, 
+];
+
+// Módulo de rutas
+@NgModule({
+  imports: [RouterModule.forRoot(routes)], // Configura las rutas principales
+  exports: [RouterModule], // Exporta RouterModule para que esté disponible en otros módulos
+})
+export class AppRoutingModule {}
