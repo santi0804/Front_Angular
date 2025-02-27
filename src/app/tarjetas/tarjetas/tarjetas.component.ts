@@ -6,7 +6,6 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-tarjetas',
-  standalone: true, 
   imports: [CommonModule, FormsModule], 
   templateUrl: './tarjetas.component.html',
 })

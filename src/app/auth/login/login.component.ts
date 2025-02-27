@@ -5,9 +5,9 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
-  standalone: true,
   imports: [FormsModule], 
-  templateUrl: './login.component.html',
+  templateUrl: './login.component.html', 
+  styleUrls: ['./login.component.css'], 
 })
 export class LoginComponent {
   credenciales = { email: '', password: '' }; 
@@ -21,13 +21,13 @@ export class LoginComponent {
   login() {
     this.authService.login(this.credenciales).subscribe({
       next: (res) => {
-        localStorage.setItem('token', res.token); 
+        localStorage.setItem('token', res.token); // Guarda el token en el localStorage
         alert('Login exitoso');
-        this.router.navigate(['/tarjetas']); 
+        this.router.navigate(['/tarjetas']); // Redirige a la ruta de tarjetas
       },
       error: (err) => {
-        alert('Error en el login'); 
-        console.error(err); 
+        alert('Error en el login'); // Muestra un mensaje de error
+        console.error(err); // Imprime el error en la consola
       },
     });
   }

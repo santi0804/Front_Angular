@@ -4,8 +4,7 @@ import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-register',
-  standalone: true, // Añade standalone si estás usando Angular 17+
-  imports: [FormsModule], // Añade FormsModule aquí
+  imports: [FormsModule], 
   templateUrl: './register.component.html',
 })
 export class RegisterComponent {

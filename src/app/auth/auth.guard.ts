@@ -3,7 +3,7 @@ import { CanActivate, Router } from '@angular/router';
 import { AuthService } from './auth.service';
 
 @Injectable({
-  providedIn: 'root', // Asegura que el guard esté disponible en toda la aplicación
+  providedIn: 'root', 
 })
 export class AuthGuard implements CanActivate {
   constructor(
@@ -17,6 +17,6 @@ export class AuthGuard implements CanActivate {
       return true; // Permite el acceso si hay un token
     }
     this.router.navigate(['/login']); // Redirige al login si no hay token
-    return false; // Deniega el acceso
+    return false; 
   }
 }
