@@ -8,17 +8,17 @@ import { AuthGuard } from './auth/auth.guard';
 
 // Configuración de rutas
 export const routes: Routes = [
-  { path: 'login', component: LoginComponent }, // Ruta para el login
-  { path: 'register', component: RegisterComponent }, // Ruta para el registro
-  { path: 'tarjetas', component: ListarComponent, canActivate: [AuthGuard] }, // Ruta protegida para listar tarjetas
-  { path: 'tarjetas/crear', component: CrearComponent, canActivate: [AuthGuard] }, // Ruta protegida para crear tarjetas
+  { path: 'login', component: LoginComponent }, 
+  { path: 'register', component: RegisterComponent }, 
+  { path: 'tarjetas', component: ListarComponent, canActivate: [AuthGuard] }, 
+  { path: 'tarjetas/crear', component: CrearComponent, canActivate: [AuthGuard] }, 
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', redirectTo: '/login' }, 
 ];
 
-// Módulo de rutas
+
 @NgModule({
-  imports: [RouterModule.forRoot(routes)], // Configura las rutas principales
-  exports: [RouterModule], // Exporta RouterModule para que esté disponible en otros módulos
+  imports: [RouterModule.forRoot(routes)], 
+  exports: [RouterModule], 
 })
 export class AppRoutingModule {}
